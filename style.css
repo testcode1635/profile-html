@@ -1,0 +1,359 @@
+ /* minimal reset + base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #1e2b3a 0%, #0f1a24 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      padding: 1.5rem;
+    }
+
+    /* main profile card – advocate style */
+    .advocate-card {
+      background: #ffffff;
+      border-radius: 2rem 2rem 2rem 2rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.45), 0 6px 18px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      border: 1px solid rgba(255, 215, 150, 0.2);
+    }
+
+    /* top section: name + title (advocate) */
+    .advocate-header {
+      background: #15232e;
+      padding: 1.8rem 2.2rem 1.2rem 2.2rem;
+      border-bottom: 3px solid #b8860b; /* dark goldenrod – legal accent */
+      position: relative;
+    }
+
+    .advocate-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #f5f0e6;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .advocate-header h1 i {
+      color: #d4af37; /* metallic gold */
+      font-size: 2rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+    }
+
+    .advocate-header .subhead {
+      font-size: 1.1rem;
+      color: #b9c7d4;
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem 1.5rem;
+      font-weight: 400;
+    }
+
+    .advocate-header .subhead span {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .advocate-header .subhead i {
+      color: #c9a53b;
+      font-size: 1rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    /* main content: two-column layout */
+    .advocate-body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* left panel — photo & quick facts */
+    .advocate-left {
+      flex: 1 1 260px;
+      background: #f9f7f3;
+      padding: 2rem 1.8rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #e6dfd3;
+    }
+
+    .advocate-photo {
+      width: 160px;
+      height: 160px;
+      background: #ddd6cb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      border: 5px solid #ffffff;
+      box-shadow: 0 12px 18px -8px rgba(0, 0, 0, 0.25), 0 0 0 2px #c9a53b;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .advocate-photo i {
+      font-size: 6rem;
+      color: #424e5a;
+      opacity: 0.75;
+      transform: scale(1);
+    }
+
+    /* use a real avatar – but since no image needed, icon stands in */
+    .quick-stats {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      background: #ffffff;
+      padding: 0.75rem 1rem;
+      border-radius: 60px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9e1d5;
+      transition: background 0.2s;
+    }
+
+    .stat-item i {
+      font-size: 1.2rem;
+      width: 1.8rem;
+      text-align: center;
+      color: #b8860b;
+    }
+
+    .stat-item .stat-text {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #2c3e4e;
+      line-height: 1.4;
+    }
+
+    .stat-item .stat-text strong {
+      font-weight: 700;
+      color: #1e2b3a;
+      display: block;
+      font-size: 1rem;
+    }
+
+    /* right panel — details, bio, practice areas */
+    .advocate-right {
+      flex: 2 1 400px;
+      background: #ffffff;
+      padding: 2rem 2rem 2rem 2rem;
+    }
+
+    .advocate-right h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #1e2b3a;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #f0e6d8;
+      padding-bottom: 0.6rem;
+    }
+
+    .advocate-right h2 i {
+      color: #b8860b;
+      font-size: 1.3rem;
+      width: 1.8rem;
+    }
+
+    .bio-text {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #2d3f4e;
+      margin-bottom: 1.8rem;
+      background: #fdfbf9;
+      padding: 1.2rem 1.3rem;
+      border-radius: 1.2rem;
+      border-left: 5px solid #c9a53b;
+      font-weight: 400;
+      box-shadow: inset 0 0 0 1px #f0e9df;
+    }
+
+    .bio-text i {
+      color: #b8860b;
+      margin-right: 0.3rem;
+    }
+
+    /* practice areas grid */
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .practice-tag {
+      background: #f6f2ec;
+      padding: 0.7rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #1e2b3a;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: all 0.15s ease;
+      border: 1px solid #e3d9cd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    }
+
+    .practice-tag i {
+      color: #b8860b;
+      font-size: 0.9rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    .practice-tag:hover {
+      background: #ffffff;
+      border-color: #b8860b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    /* contact / action row */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #eae2d7;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #ffffff;
+      padding: 0.7rem 1.4rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1e2b3a;
+      text-decoration: none;
+      border: 1px solid #d8cfc2;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .contact-btn i {
+      color: #b8860b;
+      font-size: 1rem;
+    }
+
+    .contact-btn:hover {
+      background: #1e2b3a;
+      border-color: #1e2b3a;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-btn:hover i {
+      color: #e6c45c;
+    }
+
+    /* small advocate seal / footer */
+    .advocate-footer {
+      background: #f0ebe4;
+      padding: 0.9rem 2.2rem;
+      font-size: 0.8rem;
+      color: #4d5c6b;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #ddd2c4;
+      letter-spacing: 0.3px;
+    }
+
+    .advocate-footer i {
+      color: #b8860b;
+      margin-right: 0.3rem;
+    }
+
+    .footer-bar {
+      font-weight: 500;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* responsive adjustments */
+    @media (max-width: 680px) {
+      .advocate-header h1 {
+        font-size: 2rem;
+      }
+
+      .advocate-left {
+        border-right: none;
+        border-bottom: 1px solid #e6dfd3;
+        padding: 1.8rem 1.5rem;
+      }
+
+      .advocate-right {
+        padding: 1.8rem 1.5rem;
+      }
+
+      .advocate-footer {
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: center;
+      }
+
+      .bio-text {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .advocate-header h1 {
+        font-size: 1.7rem;
+        flex-wrap: wrap;
+      }
+
+      .advocate-header .subhead {
+        font-size: 0.95rem;
+      }
+
+      .practice-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* special advocate flourish */
+    .gold-accent {
+      height: 6px;
+      background: linear-gradient(90deg, #b8860b, #e6c45c, #b8860b);
+      width: 100%;
+    }
